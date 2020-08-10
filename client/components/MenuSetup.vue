@@ -35,16 +35,23 @@ export default {
   data: () => {
     return {
       menu: {
-        id: Date.now(),
         name: '',
       },
     }
   },
   methods: {
-    addMenu() {
-      this.$store.commit('menus/add', {
-        menu: { ...this.menu },
-      })
+    async addMenu() {
+      try {
+        const menu = await this.$strapi.create('menus', {
+          name: this.menu.name,
+        })
+        debugger
+        this.$store.commit('menus/add', {
+          menu,
+        })
+      } catch (error) {
+        console.error(error)
+      }
     },
     addItems() {
       this.$store.commit('menus/addItems', {

@@ -15,6 +15,7 @@
 
 <script>
 export default {
+  middleware: 'auth',
   computed: {
     menus() {
       return this.$store.state.menus.list

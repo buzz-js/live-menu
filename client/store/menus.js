@@ -3,6 +3,9 @@ export const state = () => ({
 })
 
 export const mutations = {
+  init(state, menus) {
+    state.list = menus
+  },
   add(state, { menu }) {
     state.list.push(menu)
   },
