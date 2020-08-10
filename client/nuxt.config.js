@@ -1,6 +1,6 @@
 export default {
-  mode: "universal",
-  srcDir: "client/",
+  mode: 'universal',
+  target: 'static',
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -33,7 +33,7 @@ export default {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
   ],
@@ -43,7 +43,6 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa',
   ],
   /*
    ** Axios module configuration
