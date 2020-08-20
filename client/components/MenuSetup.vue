@@ -41,27 +41,10 @@ export default {
   },
   methods: {
     async addMenu() {
-      try {
-        const menu = await this.$strapi.create('menus', {
-          name: this.menu.name,
-        })
-        debugger
-        this.$store.commit('menus/add', {
-          menu,
-        })
-      } catch (error) {
-        console.error(error)
-      }
+      
     },
     addItems() {
-      this.$store.commit('menus/addItems', {
-        menu: { ...this.menu },
-        items: [
-          {
-            title: `Item ${new Date().getSeconds()}`,
-          },
-        ],
-      })
+      
     },
   },
 }
