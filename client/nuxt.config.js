@@ -1,6 +1,6 @@
 export default {
   mode: 'universal',
-  target: 'static',
+  target: 'server',
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -43,7 +43,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/strapi'
+    '@nuxtjs/strapi',
   ],
   /*
    ** Axios module configuration
