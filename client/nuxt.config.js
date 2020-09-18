@@ -1,6 +1,6 @@
 export default {
-  mode: 'universal',
-  target: 'server',
+  ssr: false,
+  target: 'static',
   head: {
     title: process.env.npm_package_name || '',
     meta: [

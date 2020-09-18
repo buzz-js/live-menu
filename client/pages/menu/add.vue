@@ -1,5 +1,5 @@
 <template>
-  <div id="menu-setup">
+  <div>
     <form @submit.prevent="addMenu">
       <div class="mb-3">
         <label for="name">Nombre</label>

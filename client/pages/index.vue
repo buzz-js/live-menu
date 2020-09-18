@@ -2,15 +2,19 @@
   <div class="container">
     <div class="grid home">
       <div class="bg-gray-900 min-h-screen text-gray-100 p-5">
-        <h1 class="text-gray-500 pb-5 border-b mb-5 border-gray-700">MENÚS</h1>
-        <ul class="mb-5">
-          <li v-for="menu in menus" :key="menu.id">{{ menu.name }}</li>
-        </ul>
+        <template v-if="!showMenuSetup">
+          <h1 class="text-gray-500 pb-5 border-b mb-5 border-gray-700">
+            MENÚS
+          </h1>
+          <ul class="mb-5">
+            <li v-for="menu in menus" :key="menu.id">{{ menu.name }}</li>
+          </ul>
+        </template>
+        <MenuSetup v-else @back="showMenuSetup = false" />
         <ButtonPlus
           v-if="!showMenuSetup"
           @click.native="showMenuSetup = true"
         />
-        <MenuSetup v-if="showMenuSetup" />
       </div>
       <div class="p-5">
         <ul class="list-decimal list-outside">
